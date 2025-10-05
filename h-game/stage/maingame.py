@@ -10,6 +10,14 @@ class maingame(Control):
 		print(f"Level: {Globals.level}")
 		print(f"EXP: {Globals.exp}/{Globals.exp_req}")
 		print(f"Total EXP: {Globals.exp_total}")
+<<<<<<< HEAD
+=======
+	def _on_skip_pressed(self):
+		print("skip")
+		#check difficult
+		print(Globals.difficult)
+
+>>>>>>> main
 
 	def _on_next_pressed(self):
 		print("next")
