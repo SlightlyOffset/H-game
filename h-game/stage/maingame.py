@@ -16,8 +16,6 @@ class maingame(Control):
 		#check difficult
 		print(Globals.difficult)
 
-
-
 	def _on_next_pressed(self):
 		print("next")
 		Globals.gain_exp(50)

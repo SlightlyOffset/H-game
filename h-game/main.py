@@ -7,6 +7,10 @@ class main(Control):
 	def _ready(self):
 		#ready game this pop up close
 		self.get_node("CanvasLayer").visible = False
+		self.get_node("Setting").visible = False
+		#music
+		self.music = self.get_node("AudioStreamPlayer")
+
 
 	def _on_newgame_pressed(self):
 		#open popup
@@ -18,7 +22,7 @@ class main(Control):
 
 	def _on_lederbord_pressed(self):
 		#pass
-		print("Leaderboard")
+		self.get_node("Setting").visible = True
 
 	def _on_closepop_pressed(self):
 		#close popup
@@ -38,3 +42,13 @@ class main(Control):
 	def _on_hard_pressed(self):
 		Globals.difficult = 2
 		self.get_tree().change_scene_to_file("res://stage/stage1.tscn")
+
+
+	def _on_Confrim_pressed(self):
+		self.get_node("Setting").visible = False
+	def _on_music_changed(self, value: float):
+		db_value = -80 + value
+		self.music.volume_db = db_value
+
+	def _on_resolution_selected(self, index: int):
+		pass
